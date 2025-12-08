@@ -1,0 +1,487 @@
+/* Basic Reset & Box-Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333; /* Darker neutral for readability */
+    background-color: #FFFFFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: #006699; /* Primary Blue for headings */
+    margin-bottom: 0.8em;
+}
+
+h1 { font-size: 3em; font-weight: 700; }
+h2 { font-size: 2.2em; font-weight: 600; }
+h3 { font-size: 1.6em; font-weight: 600; }
+
+a {
+    color: #006699; /* Primary Blue for links */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.container { /* Use for content width control */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+.button.primary {
+    background-color: #006699; /* Primary Blue */
+    color: #FFFFFF;
+}
+.button.primary:hover {
+    background-color: #004d73; /* Darker Blue */
+}
+.button.secondary {
+    background-color: #00B3B3; /* Secondary Teal */
+    color: #FFFFFF;
+}
+.button.secondary:hover {
+    background-color: #008f8f; /* Darker Teal */
+}
+.button.large {
+    padding: 15px 35px;
+    font-size: 1.1em;
+}
+
+/* Header & Nav */
+header {
+    background-color: #FFFFFF;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+nav .logo img {
+    height: 40px; /* Adjust as needed */
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    margin-left: 30px;
+}
+nav ul li a {
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #006699; /* Primary Blue */
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #E0F2F7; /* Light Blue background */
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    gap: 40px;
+    position: relative;
+    overflow: hidden; /* To handle image overflow if desired */
+}
+.hero::before { /* Subtle background wave/pattern */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/abstract-wave.svg') no-repeat center center; /* Placeholder for a subtle background graphic */
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+.hero-content {
+    flex: 1;
+    padding-left: 5%; /* Adjust for spacing */
+    z-index: 1;
+}
+.hero-content h1 {
+    color: #006699;
+    font-size: 3.8em; /* Larger on desktop */
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+.hero-content p {
+    font-size: 1.4em;
+    color: #666;
+    margin-bottom: 30px;
+}
+.hero-image {
+    flex: 1;
+    text-align: right;
+    padding-right: 5%; /* Adjust for spacing */
+    z-index: 1;
+}
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Soft corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Trust Bar */
+.trust-bar {
+    background-color: #f8f8f8;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+.trust-item {
+    flex-basis: 30%; /* Adjust for responsive */
+    margin: 15px 0;
+}
+.trust-item img {
+    height: 40px;
+    margin-bottom: 10px;
+}
+.trust-item p {
+    font-weight: 600;
+    color: #006699;
+}
+
+/* Sections General */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+section:nth-child(even) { /* Alternate background for readability */
+    background-color: #F8FBFD; /* Very light blue/gray */
+}
+
+/* Problem/Solution Section */
+.problem-solution h2 {
+    margin-bottom: 50px;
+}
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.solution-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+.solution-card:hover {
+    transform: translateY(-5px);
+}
+.solution-card h3 {
+    color: #00B3B3; /* Secondary Teal */
+    margin-bottom: 15px;
+}
+.solution-card p {
+    color: #666;
+}
+
+/* Solutions Overview */
+.solutions-overview .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+.solution-tile {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: block; /* Make the whole tile clickable */
+}
+.solution-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+.solution-tile img {
+    height: 60px;
+    margin-bottom: 20px;
+}
+.solution-tile h3 {
+    color: #006699;
+    margin-bottom: 10px;
+}
+.solution-tile p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Who We Help Section */
+.who-we-help {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.who-card {
+    flex: 1;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: left;
+    position: relative;
+    overflow: hidden; /* For image positioning */
+    min-height: 400px; /* Ensure cards have similar height */
+}
+.who-card h2 {
+    color: #006699;
+    margin-bottom: 20px;
+}
+.who-card p {
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 70%; /* Text doesn't overlap image */
+}
+.who-card .button {
+    position: relative; /* Ensure button is above image */
+    z-index: 2;
+}
+.who-card img {
+    position: absolute;
+    bottom: -20px; /* Slightly off-bottom */
+    right: -20px; /* Slightly off-right */
+    opacity: 0.2; /* Subtly in background */
+    height: 200px; /* Adjust size */
+    z-index: 1;
+}
+.who-card.employer img {
+    /* Specific image styling if needed */
+}
+.who-card.employee img {
+    /* Specific image styling if needed */
+}
+
+/* Testimonials */
+.testimonials {
+    background-color: #E0F2F7; /* Light blue background */
+    padding: 80px 0;
+}
+.testimonials h2 {
+    margin-bottom: 50px;
+}
+.testimonial-carousel { /* Placeholder for a simple display, JS would make it a carousel */
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.testimonial-item p {
+    font-style: italic;
+    font-size: 1.1em;
+    color: #444;
+    margin-bottom: 20px;
+}
+.testimonial-item span {
+    font-weight: 600;
+    color: #006699;
+}
+.client-logos {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.client-logos img {
+    height: 50px; /* Adjust logo heights */
+    filter: grayscale(100%); /* Desaturate for brand neutrality */
+    opacity: 0.6;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+.client-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Final CTA */
+.final-cta {
+    background-color: #006699; /* Primary Blue */
+    color: #FFFFFF;
+    padding: 80px 0;
+}
+.final-cta h2 {
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Dark gray for footer */
+    color: #f4f4f4;
+    padding: 60px 0 20px 0;
+    font-size: 0.9em;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+.footer-logo, .footer-links, .footer-contact {
+    flex-basis: 28%; /* Adjust for responsiveness */
+    margin-bottom: 30px;
+}
+.footer-logo img {
+    height: 40px;
+    margin-bottom: 15px;
+}
+.footer-logo p {
+    color: #bbb;
+}
+.footer-links h3, .footer-contact h3 {
+    color: #00B3B3; /* Secondary Teal */
+    margin-bottom: 20px;
+}
+.footer-links ul {
+    list-style: none;
+}
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+.footer-links ul li a, .footer-contact p {
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+.footer-links ul li a:hover {
+    color: #E0F2F7; /* Light Blue */
+    text-decoration: none;
+}
+.social-media a {
+    color: #bbb;
+    font-size: 1.5em; /* Example for icon fonts */
+    margin-right: 15px;
+}
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+}
+.footer-bottom p {
+    color: #bbb;
+}
+.footer-bottom a {
+    color: #bbb;
+}
+.footer-bottom a:hover {
+    color: #E0F2F7;
+}
+
+/* --- Responsive Design (Basic Example) --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.8em; }
+    
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .cta-nav {
+        margin-top: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+    }
+    .hero-content, .hero-image {
+        padding: 0;
+    }
+    .hero-image img {
+        margin-top: 30px;
+    }
+
+    .trust-bar {
+        flex-direction: column;
+    }
+    .trust-item {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    .solution-grid, .solutions-overview .solutions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .who-we-help {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .who-card {
+        padding: 30px;
+    }
+    .who-card img {
+        display: none; /* Hide background image on small screens */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-logo, .footer-links, .footer-contact {
+        flex-basis: 100%;
+    }
+    .footer-links ul {
+        padding: 0;
+    }
+    .footer-links ul li {
+        text-align: center;
+    }
+}
